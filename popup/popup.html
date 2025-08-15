@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dual Subtitle HBO Max</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+  <h1>Dual Subtitle HBO Max</h1>
+      <p class="version">v1.0.0</p>
+    </header>
+
+    <main class="popup-main">
+      <!-- Subtitle 1 Section -->
+      <section class="subtitle-section">
+        <h2>Subtitle 1</h2>
+        <div class="input-group">
+          <label for="sub1Url">Subtitle 1 URL (VTT)</label>
+          <input 
+            type="text" 
+            id="sub1Url" 
+            placeholder="https://example.com/subtitle1.vtt"
+            class="url-input"
+          />
+        </div>
+        <div class="controls-group">
+          <div class="control-row">
+            <label>Font Size</label>
+            <div class="button-group">
+              <button id="sub1FontMinus" class="control-btn" title="Decrease Font">−</button>
+              <button id="sub1FontPlus" class="control-btn" title="Increase Font">+</button>
+            </div>
+          </div>
+          <div class="control-row">
+            <label>Position</label>
+            <div class="button-group">
+              <button id="sub1PosUp" class="control-btn" title="Move Up">↑</button>
+              <button id="sub1PosDown" class="control-btn" title="Move Down">↓</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Subtitle 2 Section -->
+      <section class="subtitle-section">
+        <h2>Subtitle 2</h2>
+        <div class="input-group">
+          <label for="sub2Url">Subtitle 2 URL (VTT)</label>
+          <input 
+            type="text" 
+            id="sub2Url" 
+            placeholder="https://example.com/subtitle2.vtt"
+            class="url-input"
+          />
+        </div>
+        <div class="controls-group">
+          <div class="control-row">
+            <label>Font Size</label>
+            <div class="button-group">
+              <button id="sub2FontMinus" class="control-btn" title="Decrease Font">−</button>
+              <button id="sub2FontPlus" class="control-btn" title="Increase Font">+</button>
+            </div>
+          </div>
+          <div class="control-row">
+            <label>Position</label>
+            <div class="button-group">
+              <button id="sub2PosUp" class="control-btn" title="Move Up">↑</button>
+              <button id="sub2PosDown" class="control-btn" title="Move Down">↓</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Position Switch Button -->
+      <section class="switch-section">
+        <button id="btnSwitchPosition" class="btn btn-switch" title="Switch Subtitle 1 and 2 URLs">
+          <span class="btn-icon">🔄</span>
+          Switch URLs
+        </button>
+      </section>
+
+      <!-- Action Buttons -->
+      <section class="action-section">
+        <div class="button-row">
+          <button id="btnStart" class="btn btn-primary" title="Start Showing Subtitles">
+            <span class="btn-icon">▶</span>
+            Show
+          </button>
+          <button id="btnStop" class="btn btn-secondary" title="Stop Subtitles">
+            <span class="btn-icon">⏹</span>
+            Stop
+          </button>
+        </div>
+      </section>
+
+      <!-- Status Section -->
+      <section class="status-section">
+        <div class="status-item">
+          <span class="status-label">Subtitle:</span>
+          <span id="statusSubtitle" class="status-value">-</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Timestamp:</span>
+          <span id="statusTimestamp" class="status-value">-</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="popup-footer">
+      <p>Extension to display dual subtitles on HBO Max</p>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

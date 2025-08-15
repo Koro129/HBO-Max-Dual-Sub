@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Dual Subtitle HBO Max",
+  "version": "1.0.0",
+  "description": "Display two subtitles simultaneously with timestamp synchronization for HBO Max.",
+  "permissions": ["storage", "scripting", "activeTab"],
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "modules/utils.js",
+        "modules/subtitle-parser.js", 
+        "modules/subtitle-overlay.js",
+        "modules/subtitle-manager.js",
+        "content.js"
+      ]
+    }
+  ]
+}
