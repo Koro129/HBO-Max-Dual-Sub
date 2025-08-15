@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dual Subtitle HBO Max</title>
+  <style>
+    body { font-family: Arial, sans-serif; width: 320px; padding: 12px; }
+    label { font-weight: bold; margin-top: 10px; display: block; }
+    input { width: 100%; padding: 6px; margin-top: 4px; box-sizing: border-box; }
+    button { width: 100%; padding: 10px; margin-top: 10px; font-weight: bold; cursor: pointer; }
+    #statusSubtitle, #statusTimestamp {
+      margin-top: 8px; font-size: 14px;
+    }
+    .subtitle-controls {
+      display: flex; justify-content: space-between; margin-top: 4px;
+    }
+    .subtitle-controls button { width: 48%; padding: 6px; font-size: 14px; }
+  </style>
+</head>
+<body>
+
+  <label for="idUrl">Indonesian Subtitle URL (VTT)</label>
+  <input type="text" id="idUrl" placeholder="https://..." />
+
+  <div class="subtitle-controls">
+    <button id="idFontPlus">+</button>
+    <button id="idFontMinus">−</button>
+  </div>
+  <div class="subtitle-controls">
+    <button id="idPosUp">Up</button>
+    <button id="idPosDown">Down</button>
+  </div>
+
+  <label for="engUrl">English Subtitle URL (VTT)</label>
+  <input type="text" id="engUrl" placeholder="https://..." />
+
+  <div class="subtitle-controls">
+    <button id="engFontPlus">+</button>
+    <button id="engFontMinus">−</button>
+  </div>
+  <div class="subtitle-controls">
+    <button id="engPosUp">Up</button>
+    <button id="engPosDown">Down</button>
+  </div>
+
+  <button id="btnStart">Show</button>
+  <button id="btnStop">Stop</button>
+
+  <div id="statusSubtitle">Subtitle: -</div>
+  <div id="statusTimestamp">Video Timestamp: -</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

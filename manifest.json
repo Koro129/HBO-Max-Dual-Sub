@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Dual Subtitle HBO Max",
+  "version": "0.5",
+  "description": "Tampilkan dua subtitle simultan dengan sinkronisasi timestamp HBO Max",
+  "permissions": ["storage", "scripting", "activeTab"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
