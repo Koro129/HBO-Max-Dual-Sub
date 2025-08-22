@@ -44,6 +44,38 @@ const SubtitleOverlay = {
     Utils.log('Initializing subtitle overlay');
     this.createOverlay();
     this.loadSettings();
+    this.setupFullscreenHandler();
+  },
+  /**
+   * Setup fullscreenchange event handler
+   */
+  setupFullscreenHandler() {
+    document.addEventListener('webkitfullscreenchange', () => {
+      Utils.log('Fullscreen change detected');
+      this.handleFullscreenChange();
+    });
+  },
+
+  /**
+   * Handle moving overlay when entering/exiting fullscreen
+   */
+  handleFullscreenChange() {
+    const overlay = this.state.container;
+    if (!overlay) return;
+    const fullscreenElem = document.fullscreenElement;
+    if (fullscreenElem) {
+      fullscreenElem.appendChild(overlay);
+      overlay.style.position = 'absolute';
+      overlay.style.left = '50%';
+      overlay.style.bottom = '12%';
+      overlay.style.transform = 'translateX(-50%)';
+    } else {
+      document.body.appendChild(overlay);
+      overlay.style.position = 'fixed';
+      overlay.style.left = '50%';
+      overlay.style.bottom = '12%';
+      overlay.style.transform = 'translateX(-50%)';
+    }
   },
 
   /**
@@ -177,7 +209,7 @@ const SubtitleOverlay = {
         this.hide();
       }
 
-      Utils.log(`Overlay updated - Sub 1: "${subtitle1Text}", Sub 2: "${subtitle2Text}"`);
+      // Utils.log(`Overlay updated - Sub 1: "${subtitle1Text}", Sub 2: "${subtitle2Text}"`);
     } catch (error) {
       Utils.log(`Error updating overlay: ${error.message}`, 'error');
     }

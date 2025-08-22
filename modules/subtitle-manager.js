@@ -290,7 +290,7 @@ const SubtitleManager = {
       const currentTime = this.state.videoElement.currentTime;
       
       if (isNaN(currentTime)) {
-        Utils.log('Invalid video time detected', 'warn');
+        // Utils.log('Invalid video time detected', 'warn');
         return;
       }
       

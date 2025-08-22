@@ -174,18 +174,18 @@ const Utils = {
     const prefix = '[Dual Subtitle]';
     
     // Only log in development mode or if explicitly enabled
-    if (this.isDevelopmentMode() || level === 'error') {
-      console[level](`${prefix} [${timestamp}] ${message}`);
-    }
+    // if (this.isDevelopmentMode() || level === 'error') {
+    // }
+    console[level](`${prefix} [${timestamp}] ${message}`);
   },
 
   /**
    * Check if extension is running in development mode
    * @returns {boolean} True if in development mode
    */
-  isDevelopmentMode() {
-    return !chrome.runtime || chrome.runtime.getManifest().version.includes('dev');
-  },
+  // isDevelopmentMode() {
+  //   return !chrome.runtime || chrome.runtime.getManifest().version.includes('dev');
+  // },
 
   /**
    * Measure execution time of a function
